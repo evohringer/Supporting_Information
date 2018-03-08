@@ -1,1 +1,1 @@
-Ethylamide
+Ethanamide
