@@ -1,1 +1,1 @@
-Propionamide
+Propanamide
