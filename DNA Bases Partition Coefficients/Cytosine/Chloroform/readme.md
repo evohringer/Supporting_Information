@@ -1,1 +1,1 @@
-Topologgy files calculated with chloroform solvent. 
+Topology files with atomic charges calculated in chloroform solvent.
