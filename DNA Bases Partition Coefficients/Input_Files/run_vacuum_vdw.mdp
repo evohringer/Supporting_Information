@@ -32,7 +32,7 @@ ref-t                    = 300
 pcoupl                   = no
 ; Free energy calculations
 free-energy              = yes
-couple-moltype           = ADE
+couple-moltype           = XXX              ; XXX replace for ADE, CYT, THY, GUA or MOL.
 nstdhdl                  = 100
 ; these 'soft-core' parameters make sure we never get overlapping 
 ; charges as lambda goes to zero
