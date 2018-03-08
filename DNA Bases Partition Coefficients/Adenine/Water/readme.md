@@ -1,1 +1,1 @@
-Topology files calculated in water solvent. 
+Topology files with atomic charges calculated in water solvent.
