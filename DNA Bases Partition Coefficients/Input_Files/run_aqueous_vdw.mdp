@@ -35,7 +35,7 @@ compressibility          = 4.5e-5
 tau-p                    = 1.0
 ; Free energy calculations
 free-energy              = yes
-couple-moltype           = XXX
+couple-moltype           = XXX              ; XXX replace for ADE, CYT, THY or GUA.
 nstdhdl                  = 100
 ; these 'soft-core' parameters make sure we never get overlapping 
 ; charges as lambda goes to zero
