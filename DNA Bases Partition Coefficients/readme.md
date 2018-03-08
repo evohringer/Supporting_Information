@@ -7,7 +7,7 @@ For each methylated DNA base (or amino acid analogue) atomic charges are contain
 2. Hirshfeld-I implicit: S-HI.top
 3. Hirshfeld-I dynamic obtained as average with QM/MM calculations: D-HI.top
 4. MBIS implicit: S-MBIS.top
-5. AMBER99 force field: Amber.top
+5. Amber99 force field: Amber.top
 6. Gaff force field: Gaff.top
 
 Input files for the free energy calculations and the mdp files are found in the folder: Input_Files
