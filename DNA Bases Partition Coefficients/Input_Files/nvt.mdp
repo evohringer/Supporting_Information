@@ -1,45 +1,44 @@
 ; we'll use the md integrator with 125000 time steps (250ps)
 ; Run control
-integrator               = sd                ; Leap-frog stochastic dynamics integrator.
-nsteps                   = 50000             ; 0,002 * 50000= 100 ps. 
-dt			 = 0.002             ; 2 fs.
+integrator               = sd
+nsteps                   = 50000
+dt			                 = 0.002
 ; Output control
-nstenergy                = 500              ; save energies every 0.2 ps.
-nstxout	                 = 500              ; save coordinates every 2 ps.
-nstvout	                 = 500              ; save velocities every 2 ps.
+nstenergy                = 500
+nstxout	                 = 500
+nstvout	                 = 500
 nstlog                   = 500
 ; Neighbor searching
-cutoff-scheme            = group             ; Generate a pair list for groups of atoms.
-rlist                    = 1.0               ; Cut-off distance for the short-range neighbor list.
-nstlist                  = 5                 ; Means it is updated at least every 5 steps, but for energy minimization it will usually be every step
+cutoff-scheme            = group
+rlist                    = 1.0
+nstlist                  = 5
 ns_type                  = grid
 pbc                      = xyz
 ; Electrostatics
-coulombtype              = PME               ; Fast smooth Particle-Mesh Ewald (SPME) electrostatics.
-rcoulomb                 = 1.0               ; Distance for the Coulomb cut-off.
+coulombtype              = PME 
+rcoulomb                 = 1.0
 ; VdW
 vdwtype                  = cutoff
-vdw-modifier             = potential-switch  ; Shift the Van der Waals potential by a constant such that it is zero at the cut-off.
-rvdw-switch              = 0.8               ; Where to start switching the LJ force and possibly the potential.
-rvdw                     = 0.9               ; Distance for the LJ or Buckingham cut-off.
+vdw-modifier             = potential-switch
+rvdw-switch              = 0.8
+rvdw                     = 0.9
 ; Apply long range dispersion corrections for Energy and Pressure
 DispCorr                 = EnerPres
 ; Bonds
-constraint-algorithm     = lincs             ; LINear Constraint Solver.
-constraints              = all-bonds         ; Convert all bonds to constraints.
+constraint-algorithm     = lincs
+constraints              = all-bonds
 ; Temperature coupling
-tc-grps                  = system            ; Groups to couple separately to temperature bath.
-tau-t                    = 2                 ; Time constant, in ps.
-ref-t                    = 300               ; Reference temperature, one for each group, in K.
-; Pressure coupling
-pcoupl			 = No
-ref-p			 = 1.0               ; Reference pressure, in bar.
-compressibility		 = 4.5e-5            ; Isothermal compressibility of water, bar^-1.
-tau-p			 = 1.0               ; Time constant, in ps.
+tc-grps                  = system
+tau-t                    = 2
+ref-t                    = 300
+pcoupl			             = No
+ref-p			               = 1.0
+compressibility		       = 4.5e-5
+tau-p			               = 1.0
 ; Options for the decoupling
 sc-alpha                 = 0.5
 sc-power                 = 1.0
 sc-sigma                 = 0.3
 ; Velocity generation
-gen-vel                  = yes               ; Velocity generation is on.
-gen-temp                 = 300               ; Temperature for Maxwell distribution. 
+gen-vel                  = yes
+gen-temp                 = 300 
