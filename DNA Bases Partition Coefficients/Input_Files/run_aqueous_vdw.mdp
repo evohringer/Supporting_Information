@@ -1,0 +1,52 @@
+; we'll use the sd integrator with 500000 time steps (1ns)
+; Run control
+integrator               = sd
+nsteps                   = 1000000
+dt                       = 0.002
+; Output control
+nstenergy                = 500
+nstxout                  = 500
+nstvout                  = 500
+nstlog                   = 500
+; Neighbor searching
+cutoff-scheme            = group
+rlist                    = 1.0
+nstlist                  = 5
+;Electrostatics
+coulombtype              = PME
+rcoulomb                 = 1.0
+; VdW
+vdw-modifier             = potential-switch
+rvdw-switch              = 0.8
+rvdw                     = 0.9
+dispcorr                 = EnerPres
+; Bonds
+constraint-algorithm     = lincs
+constraints              = all-bonds
+continuation             = yes
+; Temperature coupling
+tc-grps                  = system
+tau-t                    = 2
+ref-t                    = 300
+; Pressure coupling
+pcoupl                   = Parrinello-Rahman
+ref-p                    = 1
+compressibility          = 4.5e-5
+tau-p                    = 1.0
+; Free energy calculations
+free-energy              = yes
+couple-moltype           = ADE
+nstdhdl                  = 100
+; these 'soft-core' parameters make sure we never get overlapping 
+; charges as lambda goes to zero
+sc-power                 = 1    
+sc-sigma                 = 0.3  
+sc-alpha                 = 0.5          
+; we still want the molecule to interact with itself at lambda=0
+couple-intramol          = yes   
+couple-lambda1           = none
+couple-lambda0           = vdw
+init-lambda-state        = $LAMBDA$
+; These are the lambda states at which we simulate
+; for separate LJ and Coulomb decoupling, use 
+fep-lambdas              = 0.00 0.05 0.10 0.20 0.30 0.40 0.50 0.60 0.65 0.70 0.75 0.80 0.85 0.90 0.95 1.00
