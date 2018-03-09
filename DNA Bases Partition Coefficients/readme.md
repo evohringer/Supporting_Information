@@ -2,7 +2,7 @@
 
 Manuscript can be found in https://chemrxiv.org/articles/Partition_Coefficients_of_Methylated_DNA_Bases_Obtained_from_Free_Energy_Calculations_with_Molecular_Electron_Density_Derived_Atomic_Charges_/5793996
 
-For each methylated DNA base (or amino acid analogue) atomic charges are contained in the gromacs topology files with their names according to the charge derivation method:
+For each methylated DNA base (or amino acid analogue) atomic charges are contained in the gromacs topology files with their names according to the charge derivation method for each solvent (water and chloroform):
 1. Hirshfeld-I (vaccum): HI.top
 2. Hirshfeld-I implicit: S-HI.top
 3. Hirshfeld-I dynamic obtained as average with QM/MM calculations: D-HI.top
